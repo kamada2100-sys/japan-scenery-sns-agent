@@ -3,14 +3,170 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>日本の風景SNSエージェント</title>
+  <title>Japan Scenery SNS Agent | 日本の風景SNSエージェント</title>
+  <meta name="description" content="Japan Scenery SNS Agent is a web service that creates and manages short videos of Japanese landscapes and uploads user-selected videos to TikTok.">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f6f4f1;
+      --text: #1f1f1f;
+      --muted: #5c5c5c;
+      --accent: #c8102e;
+      --border: #e4e0da;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+    a { color: var(--accent); }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+    header { border-bottom: 1px solid var(--border); }
+    header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 12px; }
+    .logo { font-weight: 700; color: var(--text); text-decoration: none; }
+    nav a { margin-left: 18px; color: var(--muted); text-decoration: none; font-size: 14px; }
+    nav a:hover { color: var(--accent); }
+    .hero { background: var(--bg-soft); padding: 72px 0 64px; text-align: center; }
+    .hero h1 { font-size: clamp(28px, 5vw, 42px); margin: 0 0 8px; }
+    .hero .en { color: var(--muted); margin: 0 0 24px; }
+    .hero p.lead { max-width: 640px; margin: 0 auto 32px; font-size: 17px; }
+    .btn { display: inline-block; background: #000; color: #fff; padding: 12px 28px; border-radius: 999px; text-decoration: none; font-weight: 600; }
+    .btn:hover { opacity: .85; }
+    section { padding: 56px 0; }
+    section h2 { font-size: 24px; margin: 0 0 4px; }
+    section .sub { color: var(--muted); margin: 0 0 28px; font-size: 14px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .card { border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+    .card h3 { margin: 0 0 6px; font-size: 17px; }
+    .card p { margin: 0; color: var(--muted); font-size: 15px; }
+    ol.steps { padding-left: 1.4em; }
+    ol.steps li { margin-bottom: 14px; }
+    ol.steps small { display: block; color: var(--muted); }
+    .alt { background: var(--bg-soft); }
+    table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    footer { border-top: 1px solid var(--border); padding: 32px 0; font-size: 14px; color: var(--muted); }
+    footer .links a { margin-right: 18px; }
+    @media (max-width: 600px) {
+      nav a { margin-left: 10px; font-size: 13px; }
+    }
+  </style>
 </head>
 <body>
-  <h1>日本の風景SNSエージェント</h1>
-  <p>日本の美しい風景コンテンツをTikTokへ投稿するためのサービスです。</p>
 
-  <a href="https://japan-scenery-tiktok.kamada2100.workers.dev/login">
-  <button>TikTokでログイン</button>
-</a>
+<header>
+  <div class="wrap">
+    <a class="logo" href="./">Japan Scenery SNS Agent</a>
+    <nav>
+      <a href="#features">機能 / Features</a>
+      <a href="#how">使い方 / How it works</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>日本の風景SNSエージェント</h1>
+    <p class="en">Japan Scenery SNS Agent</p>
+    <p class="lead">
+      日本の美しい風景（桜、富士山、神社、紅葉、雪景色など）のショート動画を作成・管理し、
+      ユーザーが選んだ動画を自分のTikTokアカウントへアップロードできるウェブサービスです。<br>
+      <span style="color:var(--muted);font-size:15px">
+        A web service that creates and manages short videos of Japanese landscapes and lets users
+        upload the videos they choose to their own TikTok account.
+      </span>
+    </p>
+    <a class="btn" href="https://japan-scenery-tiktok.kamada2100.workers.dev/login">TikTokと連携する / Connect with TikTok</a>
+  </div>
+</div>
+
+<section id="features">
+  <div class="wrap">
+    <h2>主な機能</h2>
+    <p class="sub">Features</p>
+    <div class="grid">
+      <div class="card">
+        <h3>風景動画の作成</h3>
+        <p>日本各地の風景素材から、TikTok向けの縦型ショート動画（9:16）を作成します。<br>Create vertical short videos of Japanese scenery.</p>
+      </div>
+      <div class="card">
+        <h3>動画とキャプションの管理</h3>
+        <p>作成した動画、キャプション、ハッシュタグを一覧で管理し、投稿前に確認できます。<br>Manage videos, captions and hashtags before posting.</p>
+      </div>
+      <div class="card">
+        <h3>TikTokへのアップロード</h3>
+        <p>ユーザーが選択・承認した動画だけを、TikTokの公式APIで本人のアカウントへアップロードします。<br>Upload only user-approved videos via the official TikTok API.</p>
+      </div>
+      <div class="card">
+        <h3>投稿履歴の確認</h3>
+        <p>過去に投稿した動画の履歴を確認し、同じ内容の重複投稿を防ぎます。<br>Review posting history and avoid duplicate posts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="alt">
+  <div class="wrap">
+    <h2>使い方</h2>
+    <p class="sub">How it works</p>
+    <ol class="steps">
+      <li>「TikTokと連携する」ボタンから、TikTokの公式ログイン画面で連携を許可します。
+        <small>Authorize the app on TikTok's official login screen.</small></li>
+      <li>投稿したい風景動画を選び、キャプションとハッシュタグを確認します。
+        <small>Choose a scenery video and review its caption and hashtags.</small></li>
+      <li>内容を確認してアップロードを実行すると、動画がTikTokへ送信されます。
+        <small>Confirm, and the video is uploaded to your TikTok account.</small></li>
+      <li>連携はTikTokの設定画面からいつでも解除できます。
+        <small>You can disconnect the app at any time from your TikTok settings.</small></li>
+    </ol>
+  </div>
+</section>
+
+<section id="data">
+  <div class="wrap">
+    <h2>TikTokデータの利用について</h2>
+    <p class="sub">How we use TikTok data</p>
+    <table>
+      <tr><th>利用する権限 / Scope</th><th>目的 / Purpose</th></tr>
+      <tr><td>user.info.basic</td><td>連携したアカウントの表示名とアイコンを画面に表示するため。<br>To show the connected account's display name and avatar.</td></tr>
+      <tr><td>video.upload / video.publish</td><td>ユーザーが選択・承認した動画を本人のTikTokアカウントへアップロードするため。<br>To upload videos that the user has selected and approved.</td></tr>
+    </table>
+    <p style="margin-top:20px">
+      取得した情報は上記の目的以外には使用せず、第三者へ販売・提供しません。詳しくは
+      <a href="privacy.html">プライバシーポリシー</a>をご覧ください。<br>
+      <span style="color:var(--muted);font-size:14px">We never sell or share your data. See our <a href="privacy.html">Privacy Policy</a>.</span>
+    </p>
+  </div>
+</section>
+
+<section id="contact" class="alt">
+  <div class="wrap">
+    <h2>お問い合わせ</h2>
+    <p class="sub">Contact</p>
+    <p>
+      ご質問・データ削除のご依頼は、
+      <a href="https://github.com/kamada2100-sys/japan-scenery-sns-agent/issues">GitHub Issues</a>
+      からご連絡ください。<br>
+      <span style="color:var(--muted);font-size:14px">For questions or data deletion requests, please contact us via GitHub Issues.</span>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="links">
+      <a href="privacy.html">プライバシーポリシー / Privacy Policy</a>
+      <a href="terms.html">利用規約 / Terms of Service</a>
+      <a href="#contact">お問い合わせ / Contact</a>
+    </div>
+    <p>&copy; 2026 Japan Scenery SNS Agent</p>
+  </div>
+</footer>
+
 </body>
 </html>
