@@ -100,7 +100,7 @@
       </div>
       <div class="card">
         <h3>TikTokへのアップロード</h3>
-        <p>ユーザーが選択・承認した動画だけを、TikTokの公式APIで本人のアカウントへアップロードします。<br>Upload only user-approved videos via the official TikTok API.</p>
+        <p>ユーザーが選択した動画だけを、TikTokの公式APIで本人のアカウントへ下書きとして送ります。<br>Send only user-selected videos to TikTok as drafts via the official API.</p>
       </div>
       <div class="card">
         <h3>投稿履歴の確認</h3>
@@ -119,8 +119,10 @@
         <small>Authorize the app on TikTok's official login screen.</small></li>
       <li>投稿したい風景動画を選び、キャプションとハッシュタグを確認します。
         <small>Choose a scenery video and review its caption and hashtags.</small></li>
-      <li>内容を確認してアップロードを実行すると、動画がTikTokへ送信されます。
-        <small>Confirm, and the video is uploaded to your TikTok account.</small></li>
+      <li>「アップロード」を押すと、動画がTikTokアカウントへ下書きとして送られます。
+        <small>Click "Upload" and the video is sent to your TikTok account as a draft.</small></li>
+      <li>TikTokアプリの通知から下書きを開き、編集・確認して投稿します。自動で投稿されることはありません。
+        <small>Open the draft from the TikTok app notification, edit it, and post it yourself. Nothing is posted automatically.</small></li>
       <li>連携はTikTokの設定画面からいつでも解除できます。
         <small>You can disconnect the app at any time from your TikTok settings.</small></li>
     </ol>
@@ -134,7 +136,7 @@
     <table>
       <tr><th>利用する権限 / Scope</th><th>目的 / Purpose</th></tr>
       <tr><td>user.info.basic</td><td>連携したアカウントの表示名とアイコンを画面に表示するため。<br>To show the connected account's display name and avatar.</td></tr>
-      <tr><td>video.upload / video.publish</td><td>ユーザーが選択・承認した動画を本人のTikTokアカウントへアップロードするため。<br>To upload videos that the user has selected and approved.</td></tr>
+      <tr><td>video.upload</td><td>ユーザーが選択した動画を、本人のTikTokアカウントへ下書きとして送るため。投稿はユーザーがTikTokアプリ上で編集・確認してから行います。<br>To send videos the user has selected to their TikTok account as drafts. The user edits and posts them in the TikTok app.</td></tr>
     </table>
     <p style="margin-top:20px">
       取得した情報は上記の目的以外には使用せず、第三者へ販売・提供しません。詳しくは
